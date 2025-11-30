@@ -38,7 +38,8 @@
   ],
   "scripts": {
     "proto:gen:validate": "buf generate --template buf.gen.yaml",
-    "build": "tsc -p tsconfig.build.json && node -e \"const fs=require('node:fs');const p='dist/cli.js';const s=fs.readFileSync(p,'utf8');if(!s.startsWith('#!')){fs.writeFileSync(p,'#!/usr/bin/env node\\n'+s);}\" && chmod +x dist/cli.js",
+    "prebuild": "pnpm proto:gen:validate",
+    "build": "tsc -p tsconfig.build.json && node scripts/prepare-cli.mjs",
     "clean": "rimraf dist",
     "lint": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
