@@ -1,6 +1,6 @@
 {
   "name": "@winor30/protoc-gen-ts-contract",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate TypeScript contract Input interfaces from protovalidate-enabled protobuf definitions.",
   "type": "module",
   "bin": {
