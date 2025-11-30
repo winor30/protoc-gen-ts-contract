@@ -4,7 +4,7 @@ const PROTO_SUFFIX = /\.proto$/;
 
 export function generateContractFileName(file: DescFile): string {
   const sourceName = file.proto.name;
-  const tsName = sourceName.replace(PROTO_SUFFIX, ".contract.ts");
+  const tsName = sourceName.replace(PROTO_SUFFIX, "_contract.ts");
   if (tsName.includes("..")) {
     throw new Error(
       `refusing to generate contract outside package boundary: ${tsName}`
