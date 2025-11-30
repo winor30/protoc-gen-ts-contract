@@ -1,13 +1,14 @@
-# syntax=docker/dockerfile:1.7
-FROM node:22-bookworm AS build
+FROM node:22 AS build
 ARG BUF_VERSION=1.45.0
+ENV CI=true
 WORKDIR /repo
 
 # Install buf CLI for build-time proto generation
 RUN apt-get update \
   && apt-get install -y --no-install-recommends curl ca-certificates \
-  && curl -sSL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-Linux-$(uname -m).tar.gz" \
-    | tar -xz -C /usr/local/bin buf \
+  && curl -sSL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-Linux-$(uname -m).tar.gz" -o /tmp/buf.tar.gz \
+  && tar -xzf /tmp/buf.tar.gz -C /usr/local/bin --strip-components=2 buf/bin/buf \
+  && rm -f /tmp/buf.tar.gz \
   && apt-get purge -y curl \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/*
