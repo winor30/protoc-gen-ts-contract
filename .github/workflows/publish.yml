@@ -23,6 +23,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
+          registry-url: https://registry.npmjs.org
+          scope: "@winor30"
+          always-auth: true
       - name: Setup pnpm
         run: npm install -g pnpm@10.24.0
       - name: Install dependencies
