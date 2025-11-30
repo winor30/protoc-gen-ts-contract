@@ -21,9 +21,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: bufbuild/buf-action@v1
+
+      - name: Setup buf CLI
+        uses: bufbuild/buf-action@v1
         with:
-          input: packages/ts-contract-plugin
           token: ${{ secrets.BUF_TOKEN }}
-          push: true
-          push_create_visibility: public
+          setup_only: true
+
+      - name: Build plugin image
+        run: docker build -f packages/ts-contract-plugin/Dockerfile -t protoc-gen-ts-contract:bsr .
+
+      - name: Push remote plugin to BSR
+        env:
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+        run: buf beta registry plugin push packages/ts-contract-plugin --image protoc-gen-ts-contract:bsr --visibility public

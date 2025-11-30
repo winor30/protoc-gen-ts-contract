@@ -1,0 +1,12 @@
+version: v1
+name: buf.build/winor30-org/protoc-gen-ts-contract
+plugin_version: v0.1.0
+description: TypeScript contract generator that emits Input interfaces from bufbuild/protovalidate enabled protobuf definitions.
+source_url: https://github.com/winor30/protoc-gen-ts-contract
+integration_guide_url: https://github.com/winor30/protoc-gen-ts-contract#readme
+output_languages:
+  - typescript
+registry:
+  opts:
+    - target=ts
+spdx_license_id: Apache-2.0
