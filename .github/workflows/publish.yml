@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   id-token: write
+  packages: write
 
 concurrency:
   group: npm-publish-${{ github.ref }}
@@ -23,8 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          registry-url: https://registry.npmjs.org
-          scope: "@winor30"
+          registry-url: https://npm.pkg.github.com
+          scope: "@gaudiy"
           always-auth: true
       - name: Setup pnpm
         run: npm install -g pnpm@10.24.0
@@ -38,6 +39,4 @@ jobs:
         run: pnpm -C packages/ts-contract-plugin build
 
       - name: Publish package
-        run: pnpm publish --filter @winor30/protoc-gen-ts-contract --workspace-root --provenance --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm publish --filter @gaudiy/protoc-gen-ts-contract --workspace-root --provenance --access public --no-git-checks
