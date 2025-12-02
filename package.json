@@ -7,12 +7,15 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "check": "turbo run check",
+    "format": "turbo run format",
+    "format:check": "turbo run format:check",
     "clean": "turbo run clean",
     "example:gen": "pnpm -C packages/ts-contract-plugin build && pnpm -C example proto:gen",
     "example:clean": "pnpm -C example proto:clean"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
+    "prettier": "^3.7.3",
     "turbo": "2.6.1",
     "typescript": "5.9.3"
   },

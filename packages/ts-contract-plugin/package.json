@@ -41,10 +41,12 @@
     "prebuild": "pnpm proto:gen:validate",
     "build": "tsc -p tsconfig.build.json && node scripts/prepare-cli.mjs",
     "clean": "rimraf dist",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "pnpm run lint && pnpm run test"
+    "check": "pnpm format:check && pnpm run lint && pnpm run test"
   },
   "engines": {
     "node": ">=22"

@@ -3,6 +3,8 @@
   "tasks": {
     "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
     "lint": { "outputs": [] },
+    "format": { "outputs": [] },
+    "format:check": { "outputs": [] },
     "test": { "dependsOn": ["build", "^build"], "outputs": ["coverage/**"] },
     "check": { "dependsOn": ["lint", "test", "^check"], "outputs": [] },
     "clean": { "cache": false }
