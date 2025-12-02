@@ -1,0 +1,12 @@
+version: v2
+
+plugins:
+  - remote: buf.build/bufbuild/es:v2.10.1
+    out: ./gen/es
+    include_imports: true
+    opt:
+      - target=ts
+  - local: ../packages/ts-contract-plugin/dist/cli.js
+    out: ./gen/es
+    opt:
+      - target=ts

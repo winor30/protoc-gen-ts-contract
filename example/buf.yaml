@@ -1,0 +1,12 @@
+version: v2
+
+modules:
+  - path: .
+
+lint:
+  use:
+    - DEFAULT
+
+deps:
+  - buf.build/bufbuild/protovalidate
+  - buf.build/protocolbuffers/wellknowntypes

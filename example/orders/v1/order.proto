@@ -1,0 +1,36 @@
+edition = "2023";
+
+package orders.v1;
+
+import "buf/validate/validate.proto";
+
+option features.field_presence = EXPLICIT;
+
+enum OrderStatus {
+  ORDER_STATUS_UNSPECIFIED = 0;
+  ORDER_STATUS_PENDING = 1;
+  ORDER_STATUS_PAID = 2;
+  ORDER_STATUS_SHIPPED = 3;
+}
+
+message Money {
+  string currency_code = 1 [ (buf.validate.field).string = {min_len : 1} ];
+  int64 units = 2;
+}
+
+message OrderItem {
+  string sku = 1 [ (buf.validate.field).required = true ];
+  uint32 quantity = 2 [ (buf.validate.field).required = true ];
+  Money unit_price = 3;
+}
+
+message Order {
+  string id = 1 [ (buf.validate.field).required = true ];
+  OrderStatus status = 2;
+  repeated OrderItem items = 3;
+  Money total = 4 [ (buf.validate.field).required = true ];
+}
+
+message CreateOrderRequest {
+  Order order = 1 [ (buf.validate.field).required = true ];
+}
