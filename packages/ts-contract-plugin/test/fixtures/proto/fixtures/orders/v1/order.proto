@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package fixtures.orders.v1;
+
+import "buf/validate/validate.proto";
+import "fixtures/common/v1/common.proto";
+import "google/protobuf/timestamp.proto";
+
+message OrderLine {
+  string sku = 1 [(buf.validate.field).required = true];
+  uint32 quantity = 2;
+}
+
+message Order {
+  string id = 1 [(buf.validate.field).required = true];
+  fixtures.common.v1.Money total = 2;
+  repeated OrderLine lines = 3;
+  map<string, string> attributes = 4;
+  fixtures.common.v1.Status status = 5;
+  google.protobuf.Timestamp placed_at = 6;
+}
+
+message Wrapped {
+  message Inner {
+    string label = 1;
+  }
+
+  Inner inner = 1;
+  oneof skipped {
+    string ignored = 2;
+  }
+}

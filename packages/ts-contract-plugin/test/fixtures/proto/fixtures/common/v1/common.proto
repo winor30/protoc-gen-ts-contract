@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package fixtures.common.v1;
+
+import "buf/validate/validate.proto";
+
+message Money {
+  int64 amount = 1 [(buf.validate.field).required = true];
+  string currency = 2 [(buf.validate.field).required = true];
+}
+
+enum Status {
+  STATUS_UNSPECIFIED = 0;
+  STATUS_ACTIVE = 1;
+  STATUS_BLOCKED = 2;
+}

@@ -1,0 +1,15 @@
+version: v2
+inputs:
+  - directory: .
+plugins:
+  - remote: buf.build/bufbuild/es:v2.0.0
+    out: ../expected
+    include_imports: true
+    opt:
+      - target=ts
+      - import_extension=.js
+  - local: ../../../dist/cli.js
+    out: ../expected
+    opt:
+      - target=ts
+      - import_extension=.js
