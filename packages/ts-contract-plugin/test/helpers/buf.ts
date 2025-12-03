@@ -16,14 +16,14 @@ export interface BufGenerationOptions {
 }
 
 export function generateWithBuf(
-  options: BufGenerationOptions = {}
+  options: BufGenerationOptions = {},
 ): BufGenerationResult {
   const outDir = mkdtempSync(path.join(tmpdir(), "ts-contract-gen-"));
   const templatePath = path.join(outDir, "buf.gen.yaml");
   writeFileSync(
     templatePath,
     createTemplate(outDir, options.pluginOptions ?? []),
-    "utf8"
+    "utf8",
   );
 
   execFileSync("buf", ["generate", "--template", templatePath], {
@@ -65,7 +65,7 @@ export function generateWithBuf(
  */
 function createTemplate(
   outDir: string,
-  pluginOptions: readonly string[]
+  pluginOptions: readonly string[],
 ): string {
   const baseOut = path.join(outDir, "gen");
   const esOut = baseOut;

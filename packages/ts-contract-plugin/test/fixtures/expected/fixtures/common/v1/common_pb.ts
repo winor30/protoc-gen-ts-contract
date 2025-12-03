@@ -2,7 +2,11 @@
 // @generated from file fixtures/common/v1/common.proto (package fixtures.common.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
+import type {
+  GenEnum,
+  GenFile,
+  GenMessage,
+} from "@bufbuild/protobuf/codegenv1";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv1";
 import { file_buf_validate_validate } from "../../../buf/validate/validate_pb.js";
 import type { Message } from "@bufbuild/protobuf";
@@ -10,8 +14,12 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file fixtures/common/v1/common.proto.
  */
-export const file_fixtures_common_v1_common: GenFile = /*@__PURE__*/
-  fileDesc("Ch9maXh0dXJlcy9jb21tb24vdjEvY29tbW9uLnByb3RvEhJmaXh0dXJlcy5jb21tb24udjEiOQoFTW9uZXkSFgoGYW1vdW50GAEgASgDQga6SAPIAQESGAoIY3VycmVuY3kYAiABKAlCBrpIA8gBASpHCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASEQoNU1RBVFVTX0FDVElWRRABEhIKDlNUQVRVU19CTE9DS0VEEAJiBnByb3RvMw", [file_buf_validate_validate]);
+export const file_fixtures_common_v1_common: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Ch9maXh0dXJlcy9jb21tb24vdjEvY29tbW9uLnByb3RvEhJmaXh0dXJlcy5jb21tb24udjEiOQoFTW9uZXkSFgoGYW1vdW50GAEgASgDQga6SAPIAQESGAoIY3VycmVuY3kYAiABKAlCBrpIA8gBASpHCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASEQoNU1RBVFVTX0FDVElWRRABEhIKDlNUQVRVU19CTE9DS0VEEAJiBnByb3RvMw",
+    [file_buf_validate_validate],
+  );
 
 /**
  * @generated from message fixtures.common.v1.Money
@@ -32,7 +40,8 @@ export type Money = Message<"fixtures.common.v1.Money"> & {
  * Describes the message fixtures.common.v1.Money.
  * Use `create(MoneySchema)` to create a new message.
  */
-export const MoneySchema: GenMessage<Money> = /*@__PURE__*/
+export const MoneySchema: GenMessage<Money> =
+  /*@__PURE__*/
   messageDesc(file_fixtures_common_v1_common, 0);
 
 /**
@@ -58,6 +67,6 @@ export enum Status {
 /**
  * Describes the enum fixtures.common.v1.Status.
  */
-export const StatusSchema: GenEnum<Status> = /*@__PURE__*/
+export const StatusSchema: GenEnum<Status> =
+  /*@__PURE__*/
   enumDesc(file_fixtures_common_v1_common, 0);
-

@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 function collectFiles(
   root: string,
   acc: Record<string, string> = {},
-  prefix = ""
+  prefix = "",
 ): Record<string, string> {
   for (const entry of readdirSync(root)) {
     const absolute = path.join(root, entry);
@@ -37,7 +37,7 @@ function collectFiles(
 function collectContracts(
   root: string,
   filterFile?: (file: string) => boolean,
-  replaceContent?: (file: string) => string
+  replaceContent?: (file: string) => string,
 ): Record<string, string> {
   return Object.fromEntries(
     Object.entries(collectFiles(root))
@@ -47,7 +47,7 @@ function collectContracts(
       .map(([file, content]) => [
         file,
         replaceContent ? replaceContent(content) : content,
-      ])
+      ]),
   );
 }
 
@@ -69,8 +69,8 @@ test("skip_pkg removes matching packages from generation", () => {
     (content) =>
       content.replace(
         '"target=ts,import_extension=.js"',
-        '"target=ts,import_extension=.js,skip_pkg=fixtures.orders.*"'
-      )
+        '"target=ts,import_extension=.js,skip_pkg=fixtures.orders.*"',
+      ),
   );
 
   const { genDir } = generateWithBuf({

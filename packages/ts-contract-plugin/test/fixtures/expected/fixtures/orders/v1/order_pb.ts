@@ -14,8 +14,16 @@ import type { Message } from "@bufbuild/protobuf";
 /**
  * Describes the file fixtures/orders/v1/order.proto.
  */
-export const file_fixtures_orders_v1_order: GenFile = /*@__PURE__*/
-  fileDesc("Ch5maXh0dXJlcy9vcmRlcnMvdjEvb3JkZXIucHJvdG8SEmZpeHR1cmVzLm9yZGVycy52MSIyCglPcmRlckxpbmUSEwoDc2t1GAEgASgJQga6SAPIAQESEAoIcXVhbnRpdHkYAiABKA0iwAIKBU9yZGVyEhIKAmlkGAEgASgJQga6SAPIAQESKAoFdG90YWwYAiABKAsyGS5maXh0dXJlcy5jb21tb24udjEuTW9uZXkSLAoFbGluZXMYAyADKAsyHS5maXh0dXJlcy5vcmRlcnMudjEuT3JkZXJMaW5lEj0KCmF0dHJpYnV0ZXMYBCADKAsyKS5maXh0dXJlcy5vcmRlcnMudjEuT3JkZXIuQXR0cmlidXRlc0VudHJ5EioKBnN0YXR1cxgFIAEoDjIaLmZpeHR1cmVzLmNvbW1vbi52MS5TdGF0dXMSLQoJcGxhY2VkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBoxCg9BdHRyaWJ1dGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJxCgdXcmFwcGVkEjAKBWlubmVyGAEgASgLMiEuZml4dHVyZXMub3JkZXJzLnYxLldyYXBwZWQuSW5uZXISEQoHaWdub3JlZBgCIAEoCUgAGhYKBUlubmVyEg0KBWxhYmVsGAEgASgJQgkKB3NraXBwZWRiBnByb3RvMw", [file_buf_validate_validate, file_fixtures_common_v1_common, file_google_protobuf_timestamp]);
+export const file_fixtures_orders_v1_order: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Ch5maXh0dXJlcy9vcmRlcnMvdjEvb3JkZXIucHJvdG8SEmZpeHR1cmVzLm9yZGVycy52MSIyCglPcmRlckxpbmUSEwoDc2t1GAEgASgJQga6SAPIAQESEAoIcXVhbnRpdHkYAiABKA0iwAIKBU9yZGVyEhIKAmlkGAEgASgJQga6SAPIAQESKAoFdG90YWwYAiABKAsyGS5maXh0dXJlcy5jb21tb24udjEuTW9uZXkSLAoFbGluZXMYAyADKAsyHS5maXh0dXJlcy5vcmRlcnMudjEuT3JkZXJMaW5lEj0KCmF0dHJpYnV0ZXMYBCADKAsyKS5maXh0dXJlcy5vcmRlcnMudjEuT3JkZXIuQXR0cmlidXRlc0VudHJ5EioKBnN0YXR1cxgFIAEoDjIaLmZpeHR1cmVzLmNvbW1vbi52MS5TdGF0dXMSLQoJcGxhY2VkX2F0GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBoxCg9BdHRyaWJ1dGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJxCgdXcmFwcGVkEjAKBWlubmVyGAEgASgLMiEuZml4dHVyZXMub3JkZXJzLnYxLldyYXBwZWQuSW5uZXISEQoHaWdub3JlZBgCIAEoCUgAGhYKBUlubmVyEg0KBWxhYmVsGAEgASgJQgkKB3NraXBwZWRiBnByb3RvMw",
+    [
+      file_buf_validate_validate,
+      file_fixtures_common_v1_common,
+      file_google_protobuf_timestamp,
+    ],
+  );
 
 /**
  * @generated from message fixtures.orders.v1.OrderLine
@@ -36,7 +44,8 @@ export type OrderLine = Message<"fixtures.orders.v1.OrderLine"> & {
  * Describes the message fixtures.orders.v1.OrderLine.
  * Use `create(OrderLineSchema)` to create a new message.
  */
-export const OrderLineSchema: GenMessage<OrderLine> = /*@__PURE__*/
+export const OrderLineSchema: GenMessage<OrderLine> =
+  /*@__PURE__*/
   messageDesc(file_fixtures_orders_v1_order, 0);
 
 /**
@@ -78,7 +87,8 @@ export type Order = Message<"fixtures.orders.v1.Order"> & {
  * Describes the message fixtures.orders.v1.Order.
  * Use `create(OrderSchema)` to create a new message.
  */
-export const OrderSchema: GenMessage<Order> = /*@__PURE__*/
+export const OrderSchema: GenMessage<Order> =
+  /*@__PURE__*/
   messageDesc(file_fixtures_orders_v1_order, 1);
 
 /**
@@ -93,20 +103,23 @@ export type Wrapped = Message<"fixtures.orders.v1.Wrapped"> & {
   /**
    * @generated from oneof fixtures.orders.v1.Wrapped.skipped
    */
-  skipped: {
-    /**
-     * @generated from field: string ignored = 2;
-     */
-    value: string;
-    case: "ignored";
-  } | { case: undefined; value?: undefined };
+  skipped:
+    | {
+        /**
+         * @generated from field: string ignored = 2;
+         */
+        value: string;
+        case: "ignored";
+      }
+    | { case: undefined; value?: undefined };
 };
 
 /**
  * Describes the message fixtures.orders.v1.Wrapped.
  * Use `create(WrappedSchema)` to create a new message.
  */
-export const WrappedSchema: GenMessage<Wrapped> = /*@__PURE__*/
+export const WrappedSchema: GenMessage<Wrapped> =
+  /*@__PURE__*/
   messageDesc(file_fixtures_orders_v1_order, 2);
 
 /**
@@ -123,6 +136,6 @@ export type Wrapped_Inner = Message<"fixtures.orders.v1.Wrapped.Inner"> & {
  * Describes the message fixtures.orders.v1.Wrapped.Inner.
  * Use `create(Wrapped_InnerSchema)` to create a new message.
  */
-export const Wrapped_InnerSchema: GenMessage<Wrapped_Inner> = /*@__PURE__*/
+export const Wrapped_InnerSchema: GenMessage<Wrapped_Inner> =
+  /*@__PURE__*/
   messageDesc(file_fixtures_orders_v1_order, 2, 0);
-
