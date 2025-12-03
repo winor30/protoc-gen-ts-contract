@@ -1,7 +1,7 @@
 version: v2
 
 inputs:
-  - directory: proto
+  - module: buf.build/bufbuild/protovalidate
 
 plugins:
   - remote: buf.build/bufbuild/es:v2.0.0

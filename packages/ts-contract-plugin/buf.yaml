@@ -1,9 +1,0 @@
-version: v2
-modules:
-  - path: proto
-    name: buf.build/winor-org/protoc-gen-ts-contract
-lint:
-  use:
-    - DEFAULT
-  except:
-    - PACKAGE_VERSION_SUFFIX

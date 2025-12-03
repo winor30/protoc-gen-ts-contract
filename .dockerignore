@@ -1,9 +1,0 @@
-.git
-node_modules
-pnpm-store
-.pnpm-store
-**/.turbo
-**/.cache
-**/.DS_Store
-packages/**/dist
-example/gen

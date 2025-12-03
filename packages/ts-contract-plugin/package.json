@@ -1,5 +1,5 @@
 {
-  "name": "@winor30/protoc-gen-ts-contract",
+  "name": "@gaudiy/protoc-gen-ts-contract",
   "version": "0.1.2",
   "description": "Generate TypeScript contract Input interfaces from protovalidate-enabled protobuf definitions.",
   "type": "module",
@@ -20,13 +20,13 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/winor30/protoc-gen-ts-contract.git"
+    "url": "https://github.com/gaudiy/protoc-gen-ts-contract.git"
   },
   "bugs": {
-    "url": "https://github.com/winor30/protoc-gen-ts-contract/issues"
+    "url": "https://github.com/gaudiy/protoc-gen-ts-contract/issues"
   },
-  "homepage": "https://github.com/winor30/protoc-gen-ts-contract#readme",
-  "author": "winor30",
+  "homepage": "https://github.com/gaudiy/protoc-gen-ts-contract#readme",
+  "author": "gaudiy",
   "keywords": [
     "protobuf",
     "buf",

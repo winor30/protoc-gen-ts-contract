@@ -4,7 +4,7 @@ Buf/protoc plugin that emits TypeScript contract `Input` interfaces from protova
 
 ## Requirements & install
 - Node.js 22+, `pnpm` 10+, Buf CLI
-- Install (consumer project): `pnpm add -D @winor30/protoc-gen-ts-contract`
+- Install (consumer project): `pnpm add -D @gaudiy/protoc-gen-ts-contract`
 - Working from this repo: `pnpm install && pnpm -C packages/ts-contract-plugin build`
 
 ## Use with Buf
