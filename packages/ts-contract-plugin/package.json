@@ -1,6 +1,6 @@
 {
   "name": "@gaudiy/protoc-gen-ts-contract",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate TypeScript contract Input interfaces from protovalidate-enabled protobuf definitions.",
   "type": "module",
   "bin": {
